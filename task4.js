@@ -1,47 +1,55 @@
 //Q1 - convertFahrToCelsius
 const convertFahrToCelsius = (n) => {
-    let valueType = typeof n;
-    if (isNaN(n) || n === null) {
-        return `'${n}' is not a valid number but a/an ${valueType}`;
+    let valueType = typeof n
+    const res = JSON.stringify(n)
+    if (Array.isArray(n)) {
+        return console.log(`${res} is not a valid number but a/an array`)
+    }
+    if (isNaN(n) || n === null || !parseInt(n)) {
+        return console.log(`${res} is not a valid number but a/an ${valueType}`)
     } else {
         let fToC = (n - 32) / 1.8;
-        let result = `${n}\xB0F is ${fToC.toFixed(4)}\xB0C.`;
+        let result = `${n} deg F is ${fToC.toFixed(4)} deg C.`
+        console.log(result);
         return result;
     }
-};
-convertFahrToCelsius(null);
+}
+convertFahrToCelsius('');
 
 //Q2 - checkYuGiOh
 
 const checkYuGiOh = (n) => {
     let arr = [];
-    if (isNaN(n) || n === null) {
-        return `invalid parameter: '${n}'`;
+    let res = JSON.stringify(n);
+    if (isNaN(n) || n === null || !parseInt(n) || Math.sign(-n)) {
+        return console.log(`invalid parameter: ${res}`)
     } else {
         for (let i = 1; i <= n; i++) {
             if (n === 1) {
-                return 1;
+                return 1
             } else {
                 if (i % 2 === 0 && i % 3 === 0 && i % 5 === 0) {
-                    arr.push("yu-gi-oh");
+                    arr.push("yu-gi-oh")
                 } else if (i % 2 === 0 && i % 3 === 0) {
-                    arr.push("yu-gi");
+                    arr.push("yu-gi")
                 } else if (i % 2 === 0 && i % 5 === 0) {
-                    arr.push("yu-oh");
+                    arr.push("yu-oh")
                 } else if (i % 3 === 0 && i % 5 === 0) {
-                    arr.push("gi-oh");
+                    arr.push("gi-oh")
                 } else if (i % 2 === 0) {
-                    arr.push("yu");
+                    arr.push("yu")
                 } else if (i % 3 === 0) {
-                    arr.push("gi");
+                    arr.push("gi")
                 } else if (i % 5 === 0) {
-                    arr.push("oh");
+                    arr.push("oh")
                 } else {
-                    arr.push("" + i);
+                    arr.push('' + i)
                 }
             }
+
         }
-        return arr;
+        console.log(arr)
+        return arr
     }
-};
-checkYuGiOh(null);
+}
+checkYuGiOh(10);
