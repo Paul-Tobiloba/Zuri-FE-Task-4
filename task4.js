@@ -5,11 +5,11 @@ const convertFahrToCelsius = (n) => {
     if (Array.isArray(n)) {
         return console.log(`${res} is not a valid number but a/an array`)
     }
-    if (isNaN(n) || n === null || !parseInt(n)) {
+    if (isNaN(n) || n === null || parseInt(n) != n) {
         return console.log(`${res} is not a valid number but a/an ${valueType}`)
     } else {
         let fToC = (n - 32) / 1.8;
-        let result = `${n} deg F is ${fToC.toFixed(4)} deg C.`
+        let result = `${fToC.toFixed(4)}`
         console.log(result);
         return result;
     }
@@ -21,7 +21,7 @@ convertFahrToCelsius('');
 const checkYuGiOh = (n) => {
     let arr = [];
     let res = JSON.stringify(n);
-    if (isNaN(n) || n === null || !parseInt(n) || Math.sign(-n)) {
+    if (isNaN(n) || n === null || !parseInt(n)) {
         return console.log(`invalid parameter: ${res}`)
     } else {
         for (let i = 1; i <= n; i++) {
@@ -48,8 +48,7 @@ const checkYuGiOh = (n) => {
             }
 
         }
-        console.log(arr)
-        return arr
+        return console.log(arr)
     }
 }
 checkYuGiOh(10);
