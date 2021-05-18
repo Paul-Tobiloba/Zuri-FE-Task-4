@@ -16,7 +16,7 @@ const convertFahrToCelsius = (n) => {
         return result;
     }
 }
-convertFahrToCelsius('');
+
 
 //Q2 - checkYuGiOh
 
@@ -55,4 +55,14 @@ const checkYuGiOh = (n) => {
         return arr;
     }
 }
+
+//test cases
+
+convertFahrToCelsius(0);
+convertFahrToCelsius('0');
+convertFahrToCelsius([1, 2, 3]);
+convertFahrToCelsius({ temp: 0 });
+
 checkYuGiOh(10);
+checkYuGiOh("5");
+checkYuGiOh("fizzbuss is meh");
