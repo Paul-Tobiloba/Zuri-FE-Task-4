@@ -46,7 +46,7 @@ const checkYuGiOh = (n) => {
                 } else if (i % 5 === 0) {
                     arr.push("oh")
                 } else {
-                    arr.push('' + i)
+                    arr.push(i)
                 }
             }
 
